@@ -1,0 +1,67 @@
+<html><body><h1>src/todo_list.py</h1>Killed 7 out of 13 mutants<h2>Suspicious</h2>Mutants that made the test suite take longer, but otherwise seemed ok<h3>Mutant 14</h3><pre>--- src/todo_list.py
++++ src/todo_list.py
+@@ -6,7 +6,7 @@
+         self.tasks = []
+ 
+     def add_task(self, description):
+-        task_id = len(self.tasks) + 1
++        task_id = len(self.tasks) - 1
+         task = Task(task_id, description)
+         self.tasks.append(task)
+         return task
+</pre><h3>Mutant 15</h3><pre>--- src/todo_list.py
++++ src/todo_list.py
+@@ -6,7 +6,7 @@
+         self.tasks = []
+ 
+     def add_task(self, description):
+-        task_id = len(self.tasks) + 1
++        task_id = len(self.tasks) + 2
+         task = Task(task_id, description)
+         self.tasks.append(task)
+         return task
+</pre><h3>Mutant 16</h3><pre>--- src/todo_list.py
++++ src/todo_list.py
+@@ -6,7 +6,7 @@
+         self.tasks = []
+ 
+     def add_task(self, description):
+-        task_id = len(self.tasks) + 1
++        task_id = None
+         task = Task(task_id, description)
+         self.tasks.append(task)
+         return task
+</pre><h3>Mutant 19</h3><pre>--- src/todo_list.py
++++ src/todo_list.py
+@@ -15,7 +15,7 @@
+         for task in self.tasks:
+             if task.task_id == task_id:
+                 self.tasks.remove(task)
+-                return f"Task {task_id} removed."
++                return f"XXTask {task_id} removed.XX"
+         return f"Task {task_id} not found."
+ 
+     def complete_task(self, task_id):
+</pre><h3>Mutant 20</h3><pre>--- src/todo_list.py
++++ src/todo_list.py
+@@ -16,7 +16,7 @@
+             if task.task_id == task_id:
+                 self.tasks.remove(task)
+                 return f"Task {task_id} removed."
+-        return f"Task {task_id} not found."
++        return f"XXTask {task_id} not found.XX"
+ 
+     def complete_task(self, task_id):
+         for task in self.tasks:
+</pre><h3>Mutant 25</h3><pre>--- src/todo_list.py
++++ src/todo_list.py
+@@ -28,7 +28,7 @@
+     def find_high_priority_tasks(self, threshold):
+         high_priority_tasks = []
+         for task in self.tasks:
+-            if task.priority > threshold:
++            if task.priority >= threshold:
+                 high_priority_tasks.append(task)
+         return high_priority_tasks
+ 
+</pre></body></html>
