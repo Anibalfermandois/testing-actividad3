@@ -3,14 +3,13 @@ from src.task import Task
 
 import unittest
 
-class TestTodoList(unittest.TestCase):
+class TestTask(unittest.TestCase):
 
     def test_A(self):
         t1 = Task(1,"t1",False)
         
         self.assertEqual(t1.__str__(),"Task 1: t1 (Priority: False, Not Done)")
     
-
     def test_C(self):
         t1 = Task(1,"t1",completed=False)
         self.assertEqual(t1.is_completed(),False)
